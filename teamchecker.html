@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.7.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.7.1/core.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Intramurals Team Checker</title>
+    <style>
+    .multi-color-background {
+    height: 200px;
+    background: linear-gradient(to right, #ff9999, #99ccff, #99ff99, #ffff99);}
+</style>
+</head>
+<body class="multi-color-background">
+
+    <!-- --------------------------
+         Navbar section
+         -------------------------- -->
+    <nav class="navbar navbar-light px-3 bg-white">
+        <!-- Website branding -->
+        <a class="navbar-brand fw-bold text-dark" href="index.html">Intramurals SY 2025-2026</a>
+
+        <!-- Navigation buttons -->
+        <ul class="navbar-nav ms-auto flex-row">
+            <li class="nav-item mx-3 btn rounded" style="background: linear-gradient(to right, #ff9999, #99ccff, #99ff99, #ffff99);">
+                <a class="nav-link text-dark" href="index.html">Sign up</a>
+            </li>
+            <li class="nav-item mx-3 btn rounded" style="background: linear-gradient(to right, #ff9999, #99ccff, #99ff99, #ffff99);">
+                <a class="nav-link text-dark" href="teamchecker.html">Team checker</a>
+            </li>
+            <li class="nav-item mx-3 btn rounded" style="background: linear-gradient(to right, #ff9999, #99ccff, #99ff99, #ffff99);">
+                <a class="nav-link text-dark" href="teamlist.html">Players</a>
+            </li>
+        </ul>
+    </nav>
+    <br><br><br>
+
+    <!-- --------------------------
+         Main container for Team Checker
+         -------------------------- -->
+    <div class="container w-50 bg-light rounded shadow-lg"><br>
+
+        <!-- Page heading -->
+        <h2 class="text-center">Team Checker</h2><br>
+
+        <!-- Online registration question -->
+        <h4>Are you done with online registration?</h4>
+        <input type="radio" id="yes" name="yes">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="no" name="yes" value="2">
+        <label for="no">No</label><br>
+
+        <!-- Medical clearance question -->
+        <h4>Do you have medical clearance from the clinic?</h4>
+        <input type="radio" id="yess" name="no">
+        <label for="yes">Yes</label><br>
+        <input type="radio" id="noo" name="no" value="1">
+        <label for="no">No</label><br>
+
+        <!-- Grade and section selection -->
+        <h4>What's your grade & section?</h4>
+        <select name="grade" id="grade" class="container">
+            <option value="g">Grade</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select><br>
+
+        <select name="sec" id="sec" class="container">
+            <option value="s">Section</option>
+            <option value="emerald">Emerald</option>
+            <option value="ruby">Ruby</option>
+            <option value="sapphire">Sapphire</option>
+            <option value="topaz">Topaz</option>
+        </select><br><br>
+
+        <!-- Button to trigger Python team assignment function -->
+        <button py-click="sign" class="container">Check your team</button><br><br><br>
+
+        <!-- Paragraph to display the team result -->
+        <p id="result"></p>
+
+    </div>
+
+    <!-- Link to the Python script containing the sign() function -->
+    <script type="py" src="main.py"></script>
+
+</body>
+</html>
